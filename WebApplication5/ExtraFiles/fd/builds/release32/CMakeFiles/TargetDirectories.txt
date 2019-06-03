@@ -1,0 +1,6 @@
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/CMakeFiles/rebuild_cache.dir
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/CMakeFiles/translate.dir
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/CMakeFiles/edit_cache.dir
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/search/CMakeFiles/downward.dir
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/search/CMakeFiles/edit_cache.dir
+C:/Users/OWNER/Desktop/Fast-Downward-af6295c3dc9b/builds/release32/search/CMakeFiles/rebuild_cache.dir

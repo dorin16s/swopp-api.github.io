@@ -1,0 +1,6 @@
+(moveeazy node4 node3)
+(moveeazy node3 node2)
+(moveeazy node2 node1)
+(moveeazy node1 node5)
+(moveeazy node5 node9)
+; cost = 5 (general cost)
