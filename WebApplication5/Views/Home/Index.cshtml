@@ -1,0 +1,75 @@
+﻿<div id="body">
+    <ul id="contacts"></ul>
+    <form id="saveContactForm" method="post">
+        <h3>Create a new Contact</h3>
+        <p>
+            <label for="ID">מספר מזהה</label>
+            <input type="text" name="ID" />
+        </p>
+        <p>
+            <label for="name">שם פרטי</label>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label for="lastNAme">שם משפחה</label>
+            <input type="text" name="lastNAme" />
+        </p>
+
+        <p>
+            <label for="Natural">שאלה 1: מה אתה מעדיף - שאלות בנושא גיאומטריה או שאלות בנושא שברים עשרוניים?</label>
+            <input type="text" name="q1" />
+        </p>
+        <p>
+            <label for="Natural">שאלה 2: מה אתה מעדיף - שאלות בנושא גיאומטריה או שאלות בנושא פעולות במספרים שלמים?</label>
+            <input type="text" name="q2" />
+        </p>
+
+        <p>
+            <label for="decimal">שאלה 3: מה אתה מעדיף - שאלות בנושא שברים עשרוניים או שאלות בנושא פעולות במספרים שלמים?</label>
+            <input type="text" name="q3" />
+        </p>
+        <p>
+            <label for="heightAndArea">שאלה 4: בנושא שברים עשרוניים, איזה שאלות היית מעדיף לפתור, שאלות בחיבור וחיסור שברים עשרוניים או שאלות בייצוג שברים עשרוניים</label>
+            <input type="text" name="q4" />
+        </p>
+
+        <p>
+            <label for="multiplication">שאלה 5: בנושא גיאומטריה, איזה שאלות היית מעדיף לפתור, בנושא מרובעים או בנושא גבהים ושטחים?</label>
+            <input type="text" name="q5" />
+        </p>
+        <p>
+            <label for="additionSubttionDecimal">שאלה 6: בנושא פעולות במספרים טבעיים, איזה שאלות היית מעדיף לפתור, בנושא סדר פעולות חשבון או בחילוק מספרים?  </label>
+            <input type="text" name="q6" />
+        </p>
+
+        <input type="button" id="saveContact" value="Save" />
+    </form>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+$(function()
+{
+        $.getJSON('/api/contact', function(contactsJsonPayload)
+        {
+            $(contactsJsonPayload).each(function(i, item)
+            {
+                $('#contacts').append('<li>' + item.Name + '</li>');
+            });
+        });
+        });
+
+        $('#saveContact').click(function()
+         {
+              $.post("api/contact",
+                    $("#saveContactForm").serialize(),
+                    function(value)
+                    {
+                         $('#contacts').append('<li>' + value.Name + '</li>');
+                    },
+                    "json"
+              );
+         });
+    </script>
+}
